@@ -1,0 +1,28 @@
+POST http://127.0.0.1:8100/agent/invoke
+Content-Type: application/json
+
+{
+    "question": "What services does Promtior offer?",
+    "thread_id": "abc-0001"
+}
+
+
+###
+
+POST http://127.0.0.1:8100/agent/invoke
+Content-Type: application/json
+
+{
+    "question": "When was the company founded?",
+    "thread_id": "abc-0001"
+}
+
+###
+
+POST http://127.0.0.1:8100/agent/invoke
+Content-Type: application/json
+
+{
+    "question": "What did I just asked?",
+    "thread_id": "abc-0001"
+}
