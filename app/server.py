@@ -1,18 +1,15 @@
 from dotenv import load_dotenv
 from pathlib import Path
 import os
-
-current_directory = os.getcwd()
-print(f"The current working directory is: {current_directory}")
-
 dotenv_path = Path('variables.env')
 load_dotenv(dotenv_path=dotenv_path)
 
 from typing import Any
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from langchain_core.messages import HumanMessage
 from .agent_in_memory import get_agent_executor
+from fastapi.responses import RedirectResponse
+
 
 agent_executor = get_agent_executor("./app/data/promtior_linkedin_about.txt")
 
@@ -21,6 +18,10 @@ app = FastAPI(
     version="1.0",
     description="Spin up a simple api server using LangChain's Runnable interfaces",
 )
+
+@app.get("/")
+async def redirect_root_to_docs():
+    return RedirectResponse("/docs")
 
 
 # Define Pydantic model for request body
@@ -49,4 +50,4 @@ async def generate_route(request: QuestionRequest):
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="localhost", port=8100)
+    uvicorn.run(app, host="localhost", port=8000)
