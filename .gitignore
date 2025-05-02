@@ -1,6 +1,8 @@
 __pycache__
 .vscode
 *.env
+aws/
+aws*.zip
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
