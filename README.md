@@ -1,18 +1,13 @@
-# AWS:
+# IMPORTANT:
 
-Setup:
-* `copilot init --app langserve-chatbot --name langserve-chatbot --type 'Load Balanced Web Service' --dockerfile './Dockerfile' --deploy`
+On `copilot\langserve-chatbot\manifest.yml`, uncoment the "variables" section, and add the value for "OPENAI_API_KEY":
 
-Environment name:
-* `dev`
+```yml
+variables:                    # Pass environment variables as key value pairs.
+    LOG_LEVEL: info
+    OPENAI_API_KEY: secret-key 
+```
 
-Delete:
-* `copilot svc delete --name langserve-chatbot`
-
-Installs:
-* pip install python-dotenv -----> poetry add python-dotenv
-
-# chatbot-assistant-RAG
 
 ## Installation
 
