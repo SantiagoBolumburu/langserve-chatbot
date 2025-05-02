@@ -1,3 +1,17 @@
+# AWS:
+
+Setup:
+* `copilot init --app langserve-chatbot --name langserve-chatbot --type 'Load Balanced Web Service' --dockerfile './Dockerfile' --deploy`
+
+Environment name:
+* `dev`
+
+Delete:
+* `copilot svc delete --name langserve-chatbot`
+
+Installs:
+* pip install python-dotenv -----> poetry add python-dotenv
+
 # chatbot-assistant-RAG
 
 ## Installation
